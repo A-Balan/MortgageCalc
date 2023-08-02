@@ -66,16 +66,16 @@
                 <!-- user input and submit button -->
                 <form class="action">
                     <div class="mb-2">
-                        <label for="loanAmount" class="form-label">Loan Amount</label>
-                        <input type="number" class="form-control" id="loanAmount" aria-describedby="loanAmount" required>
+                        <label for="amount" class="form-label">Loan Amount</label>
+                        <input type="number" class="form-control" id="amount" aria-describedby="loanAmount" required>
                     </div>
                     <div class="mb-2">
-                        <label for="termMonths" class="form-label">Term (Months)</label>
-                        <input type="number" class="form-control" id="termMonths" aria-describedby="termMonths" required>
+                        <label for="term" class="form-label">Term (Months)</label>
+                        <input type="number" class="form-control" id="term" aria-describedby="termMonths" required>
                     </div>
                     <div class="mb-2">
-                        <label for="interestRate" class="form-label">Interest Rate</label>
-                        <input type="number" class="form-control" id="interestRate" aria-describedby="interestRate" required>
+                        <label for="rate" class="form-label">Interest Rate</label>
+                        <input type="number" class="form-control" id="rate" aria-describedby="interestRate" required>
                     </div>
                     <div class="text-end">
                     <button type="button" class="btn btn-primary mt-2" onclick="getValues()">
@@ -87,7 +87,7 @@
             <div class="col-12 col-sm-7 mt-3">
                 <!-- monthly payment and totals -->
                 <div class="text-center"><h5>Your Monthly Payment</h5></div>
-                <div class="text-center"><h5 id="monthlyPayDisplay">
+                <div class="text-center"><h5 id="monthly-payment">...
                     <!-- JS monthly payment amount -->
                 </h5></div>
                 <div class="row ms-5">
@@ -98,9 +98,9 @@
                     </div>
                     <div class="col-6 text-center">
                         <!-- JS total calcs -->
-                        <h6 class="my-4" id="totalPrincipal">...</h6>
-                        <h6 class="mb-4" id="totalInterest">...</h6>
-                        <h6 class="mb-4" id="totalCost">...</h6>
+                        <h6 class="my-4" id="total-principal">...</h6>
+                        <h6 class="mb-4" id="total-interest">...</h6>
+                        <h6 class="mb-4" id="total-cost">...</h6>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                 <th scope="col">Balance</th>
               </tr>
             </thead>
-            <tbody id="calculations-table">
+            <tbody id="loan-table">
             <!-- calculations go here -->
             </tbody>
           </table>
@@ -145,7 +145,7 @@
         <li><a class="dropdown-item" onclick="filterEvents(this)"></a></li>
 </template>
 
-<template id="table-row-template">
+<template id="payment-row">
     <tr>
         <td data-id="month"></td>
         <td data-id="payment"></td>
@@ -167,9 +167,7 @@
     <!-- custom JS -->
     <script src="/js/site.js"></script>
 
-    <script>
-        document.getElementById('btnSubmit').addEventListener("click", displayMessage);
-    </script>
+
 </body>
 
 </html>
