@@ -12,6 +12,7 @@
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     <!-- devicon.dev -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
@@ -46,13 +47,13 @@
                             <a class="nav-link" href="/code.html">The Code</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">The Repository</a>
+                            <a class="nav-link" href="https://github.com/A-Balan/MortgageCalc">The Repo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://abalan.netlify.app/">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="https://intheweedsblog-production.up.railway.app/">Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -78,7 +79,7 @@
                         <input type="number" class="form-control" id="rate" aria-describedby="interestRate" required>
                     </div>
                     <div class="text-end">
-                    <button type="button" class="btn btn-primary mt-2" onclick="getValues()">
+                    <button type="button" class="btn btn-primary  mt-2" onclick="getValues()">
                         Calculate
                       </button>
                     </div>
@@ -123,19 +124,19 @@
           </table>
     </main>
 
-    <footer class="footer container-fluid py-1 text-center">
+    <footer class="footer container-fluid py-2 text-light text-center">
         <div class="container">
-            <div class="row row-cols-lg-3 gy-2">
+            <div class="row row-cols-1 row-cols-sm-3 align-items-center gy-2">
                 <div class="col text-start pt-1">
-                    &copy; 2023
+                    &copy; 2023 Anya Balan
                 </div>
                 <div class="col pt-1">
-                    <img src="/img/alan(4).png" height="25" />
+                   
                 </div>
                 <div class="col text-end">
-                    <a href="#"><i class=" socialicons bi bi-github"></i></a>
-                    <a href="#"><i class=" socialicons bi bi-linkedin"></i></a>
-                    <a href="mailto:abalan0326@gmail.com"><i class=" socialicons bi bi-envelope"></i></a>
+                    <a href="https://github.com/A-Balan"><i class=" socialIcons bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/anya-balan-37674a25a/"><i class=" socialIcons bi bi-linkedin"></i></a>
+                    <a><i class=" socialIcons bi bi-envelope" onclick="showClipboardMessage()"></i></a>
                 </div>
             </div>
         </div>
@@ -166,7 +167,36 @@
 
     <!-- custom JS -->
     <script src="/js/site.js"></script>
+    <script>
+        function copyToClipboard() {
+            // Copy the text inside the text field
+            navigator.clipboard.writeText("abalan0326@gmail.com");
+        }
 
+        function showClipboardMessage() {
+            // Swal.fire({
+            //     text: "abalan0326@gmail.com",
+            //     confirmButtonText: "Copy"
+            // }).then(function (result) {
+            //     copyToClipboard();
+            // });
+
+            Swal.fire({
+                html: '<br />abalan0326@gmail.com ',
+                showCloseButton: true,
+                focusConfirm: false,
+                confirmButtonText: '<i class="bi bi-clipboard"></i> Copy',
+            }).then(function (result) {
+                copyToClipboard();
+
+                if (result.value === true) {
+                    Swal.fire({
+                        html: "<br />Copied to Clipboard!"
+                    })
+                }
+            })
+        }
+    </script>  
 
 </body>
 

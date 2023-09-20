@@ -47,13 +47,13 @@
                             <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">The Repository</a>
+                            <a class="nav-link" href="https://github.com/A-Balan/MortgageCalc">The Repo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="https://abalan.netlify.app/">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="https://intheweedsblog-production.up.railway.app/">Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -254,20 +254,19 @@
         </div>
     </main>
 
-    <footer class="footer container-fluid py-3 bg-warning text-light text-center">
+    <footer class="footer container-fluid py-3 text-light text-center">
         <div class="container">
-            <div class="row row-cols-1 row-cols-lg-3 align-items-center gy-2">
-                <div class="col text-lg-start">
+            <div class="row row-cols-1 row-cols-sm-3 align-items-center gy-2">
+                <div class="col text-start pt-1">
                     &copy; 2023 Anya Balan
                 </div>
-                <div class="col">
-                    <img src="/img/alan(4).png" height="25" />
+                <div class="col pt-1">
+                    
                 </div>
-                <div class="col text-lg-end">
-                    <a href="#"><i class=" socialicons bi bi-github"></i></a>
-                    <a href="#"><i class=" socialicons bi bi-linkedin"></i></a>
-                    <a href="#"><i class=" socialicons bi bi-twitter"></i></a>
-                    <a href="mailto:abalan0326@gmail.com"><i class=" socialicons bi bi-envelope"></i></a>
+                <div class="col text-end">
+                    <a href="#"><i class=" socialIcons bi bi-github"></i></a>
+                    <a href="#"><i class=" socialIcons bi bi-linkedin"></i></a>
+                    <a><i class=" socialIcons bi bi-envelope" onclick="showClipboardMessage()"></i></a>
                 </div>
             </div>
         </div>
@@ -286,6 +285,40 @@
             'right-trim': true
         })
     </script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+      <script src="js/site.js"></script>
+      <script>
+          function copyToClipboard() {
+              // Copy the text inside the text field
+              navigator.clipboard.writeText("abalan0326@gmail.com");
+          }
+  
+          function showClipboardMessage() {
+              // Swal.fire({
+              //     text: "abalan0326@gmail.com",
+              //     confirmButtonText: "Copy"
+              // }).then(function (result) {
+              //     copyToClipboard();
+              // });
+  
+              Swal.fire({
+                  html: '<br />abalan0326@gmail.com ',
+                  showCloseButton: true,
+                  focusConfirm: false,
+                  confirmButtonText: '<i class="bi bi-clipboard"></i> Copy',
+              }).then(function (result) {
+                  copyToClipboard();
+  
+                  if (result.value === true) {
+                      Swal.fire({
+                          html: "<br />Copied to Clipboard!"
+                      })
+                  }
+              })
+          }
+      </script>  
 </body>
 
 </html>
